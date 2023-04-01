@@ -14,7 +14,7 @@ npm start
 실행하면 웹사이트가 열린다. 이미 cra로 만들어진 거라서 또 cra를 쓸 필요없다.
 [참고자료](https://demos.creative-tim.com/paper-kit-react/#/documentation/introduction)
 
-해당 웹사이트는 https://www.creative-tim.com/product/paper-kit-react#
+해당 웹사이트 템플릿은 https://www.creative-tim.com/product/paper-kit-react#
 이곳에서 다운받았다.
 
 P.S. 실험적으로 다운받은 템플릿이므로 만약 더 좋은 게 있다면 알려주세요!
