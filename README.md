@@ -19,6 +19,13 @@ npm start
 
 P.S. 실험적으로 다운받은 템플릿이므로 만약 더 좋은 게 있다면 알려주세요!
 
+(**4/3 추가**)
+npm install 하면 dependency 에러가 발생하는 경우가 있다. 이 경우 아래 코드로 해결할 수 있다.
+
+```
+npm install --save --legacy-peer-deps
+```
+
 ---
 
 아래 내용은 chatGPT의 도움을 받아 작성된 내용입니다.
