@@ -28,7 +28,7 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Container
+  Container,
 } from "reactstrap";
 
 function IndexNavbar() {
@@ -71,12 +71,12 @@ function IndexNavbar() {
             target="_blank"
             title="Coded by Creative Tim"
           >
-            Paper Kit React
+            Home
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
             className={classnames("navbar-toggler navbar-toggler", {
-              toggled: navbarCollapse
+              toggled: navbarCollapse,
             })}
             onClick={toggleNavbarCollapse}
           >
@@ -94,56 +94,63 @@ function IndexNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://twitter.com/CreativeTim?ref=creativetim"
                 target="_blank"
                 title="Follow us on Twitter"
+                href="/register-page"
               >
-                <i className="fa fa-twitter" />
-                <p className="d-lg-none">Twitter</p>
+                {/* className="fa fa-twitter"  */}
+                <i />
+                Sign In
+                {/* <p className="d-lg-none">Sign In</p> */}
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                href="/profile-page"
                 target="_blank"
                 title="Like us on Facebook"
               >
-                <i className="fa fa-facebook-square" />
-                <p className="d-lg-none">Facebook</p>
+                className="fa fa-facebook-square" 
+                <i />
+                What is Drone Taxi?
+                <p className="d-lg-none">What is Drone Taxi?</p>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                href="/profile-page"
                 target="_blank"
                 title="Follow us on Instagram"
               >
-                <i className="fa fa-instagram" />
-                <p className="d-lg-none">Instagram</p>
+                {/* className="fa fa-instagram"  */}
+                <i />
+                Drone Register
+                {/* <p className="d-lg-none">Register</p> */}
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial/paper-kit-react?ref=creativetim"
+                href="/landing-page"
                 target="_blank"
                 title="Star on GitHub"
               >
-                <i className="fa fa-github" />
-                <p className="d-lg-none">GitHub</p>
+                {/* className="fa fa-github"  */}
+                <i />
+                Register Status
+                {/* <p className="d-lg-none">RegisterStatus</p> */}
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-index-navbar"
-                target="_blank"
-              >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
+              <NavLink href="/landing-page" target="_blank">
+                {/* className="nc-icon nc-book-bookmark"  */}
+                <i /> Review
+                {/* <p className="d-lg-none">Review</p> */}
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <Button
                 className="btn-round"
                 color="danger"
@@ -152,7 +159,7 @@ function IndexNavbar() {
               >
                 <i className="nc-icon nc-spaceship"></i> Upgrade to Pro
               </Button>
-            </NavItem>
+            </NavItem> */}
           </Nav>
         </Collapse>
       </Container>

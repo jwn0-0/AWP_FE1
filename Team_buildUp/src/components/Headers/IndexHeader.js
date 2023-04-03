@@ -37,7 +37,7 @@ function IndexHeader() {
         <div className="content-center">
           <Container>
             <div className="title-brand">
-              <h1 className="presentation-title">Don't you need drone?</h1>
+              <h1 className="presentation-title">Drones for Taxi</h1>
               <div className="fog-low">
                 <img alt="..." src={require("assets/img/fog-low.png")} />
               </div>
@@ -46,7 +46,7 @@ function IndexHeader() {
               </div>
             </div>
             <h2 className="presentation-subtitle text-center">
-              Find the drones you need, borrow them and use them
+              Become a member, book a drone, use it freely, and return it.
             </h2>
           </Container>
         </div>
@@ -56,19 +56,17 @@ function IndexHeader() {
             backgroundImage: "url(" + require("assets/img/clouds.png") + ")",
           }}
         />
-        <h6 className="category category-absolute">
-          Designed and coded by Team BuildUp
-          {/* <a
+        <h6 className="category category-absolute">Designed by Team BuildUp</h6>
+        {/* <a
             href="https://www.creative-tim.com?ref=pkr-index-page"
             target="_blank"
           > */}
-          {/* <img
+        {/* <img
             alt="..."
             className="creative-tim-logo"
             src={require("assets/img/creative-tim-white-slim2.png")}
           /> */}
-          {/* </a> */}
-        </h6>
+        {/* </a> */}
       </div>
     </>
   );

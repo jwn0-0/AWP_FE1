@@ -32,13 +32,14 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
+import IndexNavbar from "components/Navbars/IndexNavbar";
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -50,7 +51,7 @@ function LandingPage() {
   });
   return (
     <>
-      <ExamplesNavbar />
+      <IndexNavbar />
       <LandingPageHeader />
       <div className="main">
         <div className="section text-center">
