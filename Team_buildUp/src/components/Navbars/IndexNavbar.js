@@ -131,19 +131,6 @@ function IndexNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href="/landing-page"
-                target="_blank"
-                title="Star on GitHub"
-              >
-                {/* className="fa fa-github"  */}
-                <i />
-                Register Status
-                {/* <p className="d-lg-none">RegisterStatus</p> */}
-              </NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/landing-page" target="_blank">
                 {/* className="nc-icon nc-book-bookmark"  */}
                 <i /> Review

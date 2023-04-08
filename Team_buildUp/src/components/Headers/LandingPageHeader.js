@@ -17,9 +17,14 @@
 
 */
 import React from "react";
+import "../../assets/css/landing.css"
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { useState } from 'react';
+import Parser from 'html-react-parser';
 
 // reactstrap components
-import { Button, Container } from "reactstrap";
+// import { Button, Container } from "reactstrap";
 
 // core components
 
@@ -39,39 +44,91 @@ function LandingPageHeader() {
       };
     }
   });
+  const [movieContent, setMovieContent] = useState({
+    title: '',
+    content: ''
+  })
+
+  const [viewContent, setViewContent] = useState([]);
+  
+
+  const getValue = e => {
+    const { name, value } = e.target
+    setMovieContent({
+      ...movieContent,
+      [name]: value
+    })
+    console.log(movieContent);
+  };
 
   return (
     <>
-      <div
+    
+      {/* <div
+        className="page-header section-dark"
         style={{
-          backgroundImage: "url(" + require("assets/img/daniel-olahh.jpg") + ")"
+          backgroundImage: "url(" + require("assets/img/antoine-barres.jpg") + ")",
+
         }}
-        className="page-header"
-        data-parallax={true}
-        ref={pageHeader}
-      >
-        <div className="filter" />
-        <Container>
-          <div className="motto text-center">
-            <h1>Example page</h1>
-            <h3>Start designing your landing page here.</h3>
-            <br />
-            <Button
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              className="btn-round mr-1"
-              color="neutral"
-              target="_blank"
-              outline
-            >
-              <i className="fa fa-play" />
-              Watch video
-            </Button>
-            <Button className="btn-round" color="neutral" type="button" outline>
-              Download
-            </Button>
+      > */}
+      <div class="img">
+      <div className="text-center">
+    <br />
+    <br />
+    <br />
+      <h1 class="drone-review"><strong>Drone Review</strong></h1>
+      <div className='movie-container'>
+        {viewContent.map(element=>
+          <div>
+            <h2>{element.title}</h2>
+            <div>
+             {Parser(element.content)}
+            </div>
           </div>
-        </Container>
+        )}
       </div>
+      
+      <div className='form-wrapper'>
+        <input className="title-input"
+          type='text'
+          placeholder='제목'
+          onChange={getValue}
+          name='title'
+        />
+        <CKEditor
+          editor={ClassicEditor}
+          data="리뷰 내용을 입력해주세요!"
+          onReady={editor => {
+            // You can store the "editor" and use when it is needed.
+            console.log('Editor is ready to use!', editor);
+          }}
+          onChange={(event, editor) => {
+            const data = editor.getData();
+            console.log({ event, editor, data });
+            setMovieContent({
+              ...movieContent,
+              content: data
+            })
+            console.log(movieContent);
+          }}
+          onBlur={(event, editor) => {
+            console.log('Blur.', editor);
+          }}
+          onFocus={(event, editor) => {
+            console.log('Focus.', editor);
+          }}
+        />
+      </div>
+      <button className="submit-button" onClick={()=>{
+        setViewContent(viewContent.concat({...movieContent}));
+      }
+      }>입력</button>
+     </div>
+     <br/><br/><br/><br/><br/><br/><br/><br/>
+     
+     {/* </div> */}
+     {/* <div class="img-cover"></div> */}
+     </div>
     </>
   );
 }
