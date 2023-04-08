@@ -24,6 +24,9 @@ import {
   Label,
   FormGroup,
   Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
   NavItem,
   NavLink,
   Nav,
@@ -35,10 +38,15 @@ import {
 } from "reactstrap";
 
 // core components
+
+import Slider from "nouislider";
+import SectionButtons from "views/index-sections/SectionButtons";
+import SectionCarousel from "views/index-sections/SectionCarousel.js";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import IndexNavbar from "components/Navbars/IndexNavbar";
+import ReactDatetime from "react-datetime";
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = React.useState("1");
@@ -60,37 +68,34 @@ function ProfilePage() {
     <>
       <IndexNavbar />
       <ProfilePageHeader />
+
       <div className="section profile-content">
         <Container>
           <div className="owner">
             <div className="avatar">
-              <img
+              {/* <img
                 alt="..."
                 className="img-circle img-no-padding img-responsive"
                 src={require("assets/img/faces/joe-gardner-2.jpg")}
-              />
+              /> */}
             </div>
             <div className="name">
-              <h4 className="title">
-                Jane Faker <br />
-              </h4>
-              <h6 className="description">Music Producer</h6>
+              <h2 className="title">
+                Register Drone <br />
+              </h2>
+              <h6 className="description">Select drones what you want</h6>
             </div>
+
+            <SectionCarousel />
           </div>
-          <Row>
+          {/* <Row>
             <Col className="ml-auto mr-auto text-center" md="6">
-              <p>
-                An artist of considerable range, Jane Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.
-              </p>
               <br />
-              <Button className="btn-round" color="default" outline>
+               <Button className="btn-round" color="default" outline>
                 <i className="fa fa-cog" /> Settings
-              </Button>
+              </Button> 
             </Col>
-          </Row>
+          </Row> */}
           <br />
           <div className="nav-tabs-navigation">
             <div className="nav-tabs-wrapper">
@@ -102,7 +107,7 @@ function ProfilePage() {
                       toggle("1");
                     }}
                   >
-                    Follows
+                    Register
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -112,13 +117,13 @@ function ProfilePage() {
                       toggle("2");
                     }}
                   >
-                    Following
+                    Register Status
                   </NavLink>
                 </NavItem>
               </Nav>
             </div>
           </div>
-          {/* Tab panes */}
+
           <TabContent className="following" activeTab={activeTab}>
             <TabPane tabId="1" id="follows">
               <Row>
@@ -129,14 +134,13 @@ function ProfilePage() {
                         <Col className="ml-auto mr-auto" lg="2" md="4" xs="4">
                           <img
                             alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/clem-onojeghuo-2.jpg")}
+                            className="img-rounded img-responsive"
+                            src={require("assets/img/drone1.jpg")}
                           />
                         </Col>
                         <Col className="ml-auto mr-auto" lg="7" md="4" xs="4">
                           <h6>
                             Flume <br />
-                            <small>Musical Producer</small>
                           </h6>
                         </Col>
                         <Col className="ml-auto mr-auto" lg="3" md="4" xs="4">
@@ -159,14 +163,13 @@ function ProfilePage() {
                         <Col className="mx-auto" lg="2" md="4" xs="4">
                           <img
                             alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/ayo-ogunseinde-2.jpg")}
+                            className="img-rounded img-responsive"
+                            src={require("assets/img/drone2.jpg")}
                           />
                         </Col>
                         <Col lg="7" md="4" xs="4">
                           <h6>
                             Banks <br />
-                            <small>Singer</small>
                           </h6>
                         </Col>
                         <Col lg="3" md="4" xs="4">
@@ -179,10 +182,85 @@ function ProfilePage() {
                         </Col>
                       </Row>
                     </li>
+                    <hr />
+                    <li>
+                      <Row>
+                        <Col className="mx-auto" lg="2" md="4" xs="4">
+                          <img
+                            alt="..."
+                            className="img-rounded img-responsive"
+                            src={require("assets/img/drone3.jpg")}
+                          />
+                        </Col>
+                        <Col lg="7" md="4" xs="4">
+                          <h6>
+                            Compo <br />
+                          </h6>
+                        </Col>
+                        <Col lg="3" md="4" xs="4">
+                          <FormGroup check>
+                            <Label check>
+                              <Input defaultValue="" type="checkbox" />
+                              <span className="form-check-sign" />
+                            </Label>
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                    </li>
+
+                    <hr />
+
+                    <li>
+                      <Row>
+                        <Col md="10">
+                          <InputGroup>
+                            <Input placeholder="Username" type="text" />
+                            <InputGroupAddon addonType="append">
+                              <InputGroupText>
+                                <i aria-hidden={true} className="fa fa-group" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                          </InputGroup>
+                        </Col>
+                      </Row>
+                    </li>
+
+                    <br />
+
+                    <li>
+                      <Row>
+                        <Col md="10">
+                          <FormGroup>
+                            <InputGroup className="date" id="datetimepicker">
+                              <ReactDatetime
+                                inputProps={{
+                                  placeholder: "Choose your time",
+                                }}
+                              />
+                              <InputGroupAddon addonType="append">
+                                <InputGroupText>
+                                  <span className="glyphicon glyphicon-calendar">
+                                    <i
+                                      aria-hidden={true}
+                                      className="fa fa-calendar"
+                                    />
+                                  </span>
+                                </InputGroupText>
+                              </InputGroupAddon>
+                            </InputGroup>
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                    </li>
+                    <hr />
+                    <Button className="btn-round" color="success">
+                      <i className="fa fa-cog" /> Register
+                    </Button>
                   </ul>
                 </Col>
               </Row>
             </TabPane>
+
             <TabPane className="text-center" tabId="2" id="following">
               <h3 className="text-muted">Not following anyone yet :</h3>
               <Button className="btn-round" color="warning">
@@ -192,7 +270,6 @@ function ProfilePage() {
           </TabContent>
         </Container>
       </div>
-      <DemoFooter />
     </>
   );
 }

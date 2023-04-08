@@ -27,27 +27,27 @@ import {
   Carousel,
   CarouselItem,
   CarouselIndicators,
-  CarouselCaption
+  CarouselCaption,
 } from "reactstrap";
 
 // core components
 
 const items = [
   {
-    src: require("assets/img/soroush-karimi.jpg"),
+    src: require("assets/img/drone1.jpg"),
     altText: "Somewhere",
-    caption: "Somewhere"
+    caption: "Drone for everywhere",
   },
   {
-    src: require("assets/img/federico-beccari.jpg"),
+    src: require("assets/img/drone2.jpg"),
     altText: "Somewhere else",
-    caption: "Somewhere else"
+    caption: "Drone for travel",
   },
   {
-    src: require("assets/img/joshua-stannard.jpg"),
+    src: require("assets/img/drone3.jpg"),
     altText: "Here it is",
-    caption: "Here it is"
-  }
+    caption: "Drone for you",
+  },
 ];
 
 function SectionCarousel() {

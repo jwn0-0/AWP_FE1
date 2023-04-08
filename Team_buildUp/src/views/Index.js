@@ -53,7 +53,7 @@ function Index() {
       <IndexNavbar />
       <IndexHeader />
       <div className="main">
-        {/* <SectionButtons />
+        <SectionButtons />
         <SectionNavbars />
         <SectionNavigation />
         <SectionProgress />
@@ -61,7 +61,7 @@ function Index() {
         <SectionTypography />
         <SectionJavaScript />
         <SectionCarousel />
-        <SectionNucleoIcons /> */}
+        <SectionNucleoIcons />
         <SectionDark />
         {/* <SectionLogin />
         <SectionExamples /> */}
