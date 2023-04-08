@@ -51,9 +51,11 @@ function LandingPage() {
   });
   return (
     <>
+    
       <IndexNavbar />
       <LandingPageHeader />
-      <div className="main">
+      
+      {/* <div className="main">
         <div className="section text-center">
           <Container>
             <Row>
@@ -361,8 +363,8 @@ function LandingPage() {
             </Row>
           </Container>
         </div>
-      </div>
-      <DemoFooter />
+      </div> */}
+      {/* <DemoFooter /> */}
     </>
   );
 }
