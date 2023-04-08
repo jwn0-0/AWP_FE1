@@ -25,6 +25,10 @@ import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import IndexNavbar from "components/Navbars/IndexNavbar";
 
+function handleClick(e){
+  window.location.href="/register"
+}
+
 function RegisterPage() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -79,7 +83,8 @@ function RegisterPage() {
                   <Input placeholder="Email" type="text" />
                   <label>Password</label>
                   <Input placeholder="Password" type="password" />
-                  <Button block className="btn-round" color="danger">
+                  <Button block className="btn-round" color="danger"
+                  onClick={() => handleClick()}>
                     Register
                   </Button>
                 </Form>
@@ -98,10 +103,6 @@ function RegisterPage() {
           </Row>
         </Container>
         <div className="footer register-footer text-center">
-          <h6>
-            © {new Date().getFullYear()}, made with{" "}
-            <i className="fa fa-heart heart" /> by Creative Tim
-          </h6>
         </div>
       </div>
     </>
