@@ -76,7 +76,7 @@ function LandingPageHeader() {
     <br />
     <br />
     <br />
-      <h1><strong>Drone Review</strong></h1>
+      <h1 class="drone-review"><strong>Drone Review</strong></h1>
       <div className='movie-container'>
         {viewContent.map(element=>
           <div>
@@ -124,6 +124,8 @@ function LandingPageHeader() {
       }
       }>입력</button>
      </div>
+     <br/><br/><br/><br/><br/><br/><br/><br/>
+     
      {/* </div> */}
      {/* <div class="img-cover"></div> */}
      </div>
