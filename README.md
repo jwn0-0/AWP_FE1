@@ -79,8 +79,7 @@ npm install --save --legacy-peer-deps
 
 ## 구현
 
-지금까지 배운 내용이
-props, hook, redux 이거 세개인데...
+
 
 ## 실행화면
 
